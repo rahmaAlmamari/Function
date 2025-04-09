@@ -113,8 +113,23 @@ namespace Function
                         printValue(printResult8);
 
                         break;
-                    //case 9:
-                    //    break;
+                    case 9:
+
+                        double number_1, number_2;
+                        char signal;
+
+                        Console.WriteLine("Enter your first number:");
+                        number_1 = double.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter your second number:");
+                        number_2 = double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("\n Enter your operator (+, -, *, /):");
+                        signal = char.Parse(Console.ReadLine());
+
+                        string printResult9 = SimpleCalculator(number_1, number_2, signal);
+                        printValue(printResult9);
+
+                        break;
                     default:
                     Console.WriteLine("Wrong Choice!");
                     break;
@@ -272,7 +287,45 @@ namespace Function
             return bill;
         }
         //9. Simple Calculator ...
+        public static string SimpleCalculator(double input1, double input2, char signal)
+        {
+            double result;
+            string message;
 
+            if (signal == '+')
+            {
+                result = input1 + input2;
+                message = "\n Your result is:" + result;
+            }
+            else if (signal == '-')
+            {
+                result = input1 - input2;
+                message = "\n Your result is:" + result;
+            }
+            else if (signal == '/')
+            {
+                if (input2 == 0)
+                {
+                    message = "\n You can not divide by ZERO";
+                }
+                else
+                {
+                    result = input1 / input2;
+                    message = "\n Your result is:" + result;
+                }
+            }
+            else if (signal == '*')
+            {
+                result = input1 * input2;
+                message = "\n Your result is:" + result;
+            }
+            else
+            {
+                message = "\n You enter unaccepted operator!";
+            }
+
+            return message;
+        }
 
 
         //Additional methods (Overloaded) ...
