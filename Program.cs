@@ -60,8 +60,16 @@ namespace Function
                         printValue(printResult3);
 
                         break;
-                    //case 4:
-                    //    break;
+                    case 4:
+
+                        double price;
+                        Console.WriteLine("Enter your item price:");
+                        price = double.Parse(Console.ReadLine());
+
+                        double printResult4 = SimpleDiscountCalculator(price);
+                        printValue(printResult4);
+
+                        break;
                     //case 5:
                     //    break;
                     //case 6:
@@ -138,6 +146,22 @@ namespace Function
             return Fahrenheit;
         }
         //4. Simple Discount Calculator ...
+        public static double SimpleDiscountCalculator(double input)
+        {
+            double discount, final_price;
+
+            if (input > 100)
+            {
+                discount = 0.10 * input;
+                final_price = input - discount;
+            }
+            else
+            {
+                final_price = input;
+            }
+
+            return final_price;
+        }
         //5. Grading System ...
         //6. Swap Two Numbers ...
         //7. Days to Weeks and Days Converter ...
