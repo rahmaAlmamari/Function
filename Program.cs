@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Function
 {
@@ -80,10 +81,28 @@ namespace Function
                         printValue(printResult5);
 
                         break;
-                    //case 6:
-                    //    break;
-                    //case 7:
-                    //    break;
+                    case 6:
+
+                        int f_number, s_number;
+                        Console.WriteLine("Enter your first number:");
+                        f_number = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter your second number:");
+                        s_number = int.Parse(Console.ReadLine());
+
+                        string printResult6 = SwapTwoNumbers(f_number, s_number);
+                        printValue(printResult6);
+
+                        break;
+                    case 7:
+
+                        int numberTocheck;
+                        Console.WriteLine("Enter your the number of days:");
+                        numberTocheck = int.Parse(Console.ReadLine());
+
+                        string printResult7 = DaysToWeeksAndDaysConverter(numberTocheck);
+                        printValue(printResult7);
+
+                        break;
                     //case 8:
                     //    break;
                     //case 9:
@@ -198,7 +217,32 @@ namespace Function
             return grade;
         }
         //6. Swap Two Numbers ...
+        public static string SwapTwoNumbers(int num1, int num2)
+        {
+            int number1, number2, number_hold;
+            string message;
+
+            number_hold = num1;
+            number1 = num2;
+            number2 = number_hold;
+
+            message = "Your numbers after swap: \n" +
+                      "first number:\n" + number1 +
+                      "second number:\n" + number2;
+            return message;
+        }
         //7. Days to Weeks and Days Converter ...
+        public static string DaysToWeeksAndDaysConverter(int input)
+        {
+            int weeks, days;
+            string message;
+            weeks = input / 7;
+            days = input % 7;
+
+            message = "Then number of weeks you have is:" + weeks +
+                      "\n Then number of days you have is:" + days;
+            return message;
+        }
         //8. Electricity Bill Calculator ...
         //9. Simple Calculator ...
 
@@ -211,7 +255,7 @@ namespace Function
             Console.WriteLine("the result of this operation is: " + input);
         }
         //to print string ...
-        public static void printValue(String input)
+        public static void printValue(string input)
         {
             Console.WriteLine("the result of this operation is: " + input);
         }
