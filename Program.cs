@@ -70,8 +70,16 @@ namespace Function
                         printValue(printResult4);
 
                         break;
-                    //case 5:
-                    //    break;
+                    case 5:
+
+                        double score;
+                        Console.WriteLine("Enter your score:");
+                        score = double.Parse(Console.ReadLine());
+
+                        char printResult5 = GradingSystem(score);
+                        printValue(printResult5);
+
+                        break;
                     //case 6:
                     //    break;
                     //case 7:
@@ -163,6 +171,32 @@ namespace Function
             return final_price;
         }
         //5. Grading System ...
+        public static char GradingSystem(double input)
+        {
+            char grade;
+            if (input >= 90)
+            {
+                grade = 'A';
+            }
+            else if (input >= 80)
+            {
+                grade = 'B';
+            }
+            else if (input >= 70)
+            {
+                grade = 'C';
+            }
+            else if (input >= 60)
+            {
+                grade = 'D';
+            }
+            else
+            {
+                grade = 'F';
+            }
+
+            return grade;
+        }
         //6. Swap Two Numbers ...
         //7. Days to Weeks and Days Converter ...
         //8. Electricity Bill Calculator ...
