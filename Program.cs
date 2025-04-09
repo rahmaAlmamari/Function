@@ -103,8 +103,16 @@ namespace Function
                         printValue(printResult7);
 
                         break;
-                    //case 8:
-                    //    break;
+                    case 8:
+
+                        double units;
+                        Console.WriteLine("Enter the number of your units:");
+                        units = double.Parse(Console.ReadLine());
+
+                        double printResult8 = ElectricityBillCalculator(units);
+                        printValue(printResult8);
+
+                        break;
                     //case 9:
                     //    break;
                     default:
@@ -244,6 +252,25 @@ namespace Function
             return message;
         }
         //8. Electricity Bill Calculator ...
+        public static double ElectricityBillCalculator(double input)
+        {
+            double bill;
+
+            if (input <= 100)
+            {
+                bill = 0.5 * input;
+            }
+            else if (input <= 300)
+            {
+                bill = 0.75 * input;
+            }
+            else
+            {
+                bill = 1 * input;
+            }
+
+            return bill;
+        }
         //9. Simple Calculator ...
 
 
